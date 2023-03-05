@@ -36,13 +36,3 @@ class ReverseText:
             else:
                 reversed_text = reversed_text + word[::-1]
                 return reversed_text
-
-
-if __name__ == '__main__':
-    text = input('Enter the text here: ')
-
-    reverseText = ReverseText(text)
-
-    print(reverseText.reverse_character_wise())
-    print(reverseText.reverse_character_wise_o1())
-    print(reverseText.reverse_word_wise())

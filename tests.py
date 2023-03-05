@@ -9,9 +9,6 @@ class ReverseTextTest(unittest.TestCase):
         print("setUpTestData: Run once to set up non-modified data for all class methods.")
         pass
 
-    def testUp(self):
-        print("setUp: Run once for every test method to setup clean data.")
-
     def test_wordwise_reverse(self):
         test_text = "This is a test"
         test_reversed = "test a is This"

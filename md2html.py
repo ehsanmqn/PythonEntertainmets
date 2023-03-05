@@ -17,9 +17,9 @@ class MarkdownToHtml:
         if input_text is not None:
             pass
         else:
-            self.convert()
+            self.convert_file()
 
-    def convert(self):
+    def convert_file(self):
         with open(self.input_filename) as read:
             with open(self.output_filename, 'w') as html:
                 unordered_start, ordered_start, paragraph = False, False, False

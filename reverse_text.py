@@ -1,43 +1,48 @@
 # This is a sample Python script.
 
-def reverse_character_wise(input_text: str) -> str:
-    reversed_text = ''
 
-    for index in range(len(input_text) - 1, -1, -1):
-        reversed_text = reversed_text + input_text[index]
+class ReverseText:
+    def __init__(self, input_text: str) -> None:
+        self.input = input_text
 
-    return reversed_text
+    def reverse_character_wise(self) -> str:
+        reversed_text = ''
 
+        for index in range(len(self.input) - 1, -1, -1):
+            reversed_text = reversed_text + self.input[index]
 
-def reverse_character_wise_o1(input_text: str) -> str:
-    return input_text[::-1]
+        return reversed_text
 
+    def reverse_character_wise_o1(self) -> str:
+        return self.input[::-1]
 
-def reverse_word_wise(input_text: str) -> str:
-    reversed_text = ''
+    def reverse_word_wise(self) -> str:
+        reversed_text = ''
 
-    input_text = list(input_text)
-    while True:
-        word = ''
-        character = input_text.pop()
-        while character != ' ':
-            word = word + character
+        input_text = list(self.input)
+        while True:
+            word = ''
+            character = input_text.pop()
+            while character != ' ':
+                word = word + character
 
-            try:
-                character = input_text.pop()
-            except IndexError as e:
-                character = ' '
+                try:
+                    character = input_text.pop()
+                except IndexError as e:
+                    character = ' '
 
-        if len(input_text) > 0:
-            reversed_text = reversed_text + word[::-1] + ' '
-        else:
-            reversed_text = reversed_text + word[::-1]
-            return reversed_text
+            if len(input_text) > 0:
+                reversed_text = reversed_text + word[::-1] + ' '
+            else:
+                reversed_text = reversed_text + word[::-1]
+                return reversed_text
 
 
 if __name__ == '__main__':
     text = input('Enter the text here: ')
-    print(reverse_character_wise(text))
-    print(reverse_character_wise_o1(text))
-    print(reverse_word_wise(text))
 
+    reverseText = ReverseText(text)
+
+    print(reverseText.reverse_character_wise())
+    print(reverseText.reverse_character_wise_o1())
+    print(reverseText.reverse_word_wise())

@@ -1,13 +1,18 @@
 import unittest
 
 from reverse_text import ReverseText
+from md2html import MarkdownToHtml
 
 
 class ReverseTextTest(unittest.TestCase):
     @classmethod
     def setUpTestData(cls):
-        print("setUpTestData: Run once to set up non-modified data for all class methods.")
+        print("ReverseTextTest: Run once to set up non-modified data for all class methods.")
         pass
+
+    @classmethod
+    def setUp(cls) -> None:
+        print("ReverseTextTest: Run for every test")
 
     def test_wordwise_reverse(self):
         test_text = "This is a test"
@@ -24,6 +29,16 @@ class ReverseTextTest(unittest.TestCase):
         reverse_text = ReverseText(test_text).reverse_character_wise_o1()
 
         self.assertEqual(reverse_text, test_reversed)
+
+
+class MarkdownToHtmlTest(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        print("MarkdownToHtmlTest: Run once")
+
+    @classmethod
+    def setUp(cls) -> None:
+        print("MarkdownToHtmlTest: Run for every test")
 
 
 if __name__ == '__main__':

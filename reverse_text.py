@@ -1,4 +1,3 @@
-# This is a sample Python script.
 
 
 class ReverseText:

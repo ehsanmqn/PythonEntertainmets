@@ -1,3 +1,4 @@
+from importlib.resources import read_text
 
 
 class ReverseText:
@@ -35,3 +36,30 @@ class ReverseText:
             else:
                 reversed_text = reversed_text + word[::-1]
                 return reversed_text
+
+    def reverse_text_pure(self):
+
+        input_text = list(self.input)
+        reversed_text = [''] * len(self.input)
+
+        end_index = len(input_text)
+        start_index = end_index - 1
+        reversed_index = 0
+
+        while True:
+            while input_text[start_index] != ' ' and start_index >= 0:
+                start_index -= 1
+
+            for index in range(start_index + 1, end_index):
+                reversed_text[reversed_index] = input_text[index]
+                reversed_index += 1
+
+            if start_index <= 0:
+                return ''.join(reversed_text)
+
+            reversed_text[reversed_index] = ' '
+            reversed_index += 1
+
+            end_index = start_index
+            start_index -= 1
+

@@ -24,8 +24,7 @@ class MyHTMLParser():
                 tag = tag.replace("/", "")
 
                 if is_start is False:
-
-                self.handle_endtag(tag=tag)
+                    self.handle_endtag(tag=tag)
             else:
                 self.handle_starttag(tag=tag)
 

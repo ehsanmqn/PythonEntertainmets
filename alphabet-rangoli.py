@@ -2,7 +2,9 @@ alpha = list('abcdefghijklmnopqrstuvwxyz')
 
 
 def print_rangoli(size):
-    for row in range((2 * size - 1) // 2 + 1):
+    first_half_rows = (2 * size - 1) // 2 + 1
+
+    for row in range(first_half_rows):
         length = 4 * size - 3
         for col in range(length // 2 - 2 * row):
             print('-', end='')
@@ -22,7 +24,9 @@ def print_rangoli(size):
 
         print()
 
-    for row in range((2 * size - 1) // 2 + 1):
+    second_half_rows = 2 * size - 1
+
+    for row in range(first_half_rows + 1, second_half_rows):
         length = 4 * size - 3
         for col in range(length // 2 - 2 * row):
             print('-', end='')
